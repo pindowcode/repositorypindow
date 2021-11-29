@@ -1,0 +1,3 @@
+n=int(input("enter the number of numbers: "))
+s=sum(range(1,n+1))
+print(s)
