@@ -1,0 +1,11 @@
+from math import tan, pi
+n=int(input("enter the number of sides: "))
+s=float(input("enter the side length: "))
+numbr=int(input("enter the number of numbers: "))
+def polygonarea(n,s):
+  area=n*(s**2)/(4*tan(pi/n))
+  return area
+def sumnumbers(numbr):
+  summa=sum(range(1,numbr+1))
+  return summa
+print(polygonarea(n,s),sumnumbers(numbr))
