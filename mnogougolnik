@@ -1,0 +1,5 @@
+from math import tan, pi
+n=int(input("enter the number of sides: "))
+s=float(input("enter the side length: "))
+area=n*(s**2)/(4*tan(pi/n))
+print(area)
