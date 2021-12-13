@@ -1,11 +1,31 @@
 from math import tan, pi
+import time
+def perf_time(func):
+    def wrapper(*args, **kwargs):
+        print(f"Была вызвана функция {func.__name__}")
+        start = time.time()
+        func(*args, **kwargs)
+        end = time.time()
+        print(f"Время выполнения функции: {end - start} секунд")
+    return wrapper
+
 n=int(input("enter the number of sides: "))
 s=float(input("enter the side length: "))
 numbr=int(input("enter the number of numbers: "))
+
+@perf_time
 def polygonarea(n,s):
-  area=n*(s**2)/(4*tan(pi/n))
-  return area
+    area=n*(s**2)/(4*tan(pi/n))
+    print(area)
+    return area
+
+@perf_time
 def sumnumbers(numbr):
   summa=sum(range(1,numbr+1))
-  return summa
-print(polygonarea(n,s),sumnumbers(numbr))
+  print(summa)
+  return summa  
+
+
+if __name__ == '__main__':
+  polygonarea(n,s)
+  sumnumbers(numbr)
